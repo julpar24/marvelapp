@@ -7,4 +7,5 @@ target 'marvelapp' do
 
   # Pods for marvelapp
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 end

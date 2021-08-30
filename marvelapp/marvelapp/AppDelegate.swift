@@ -7,15 +7,12 @@
 
 import UIKit
 import Firebase
-import FirebaseUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        let authUI = FUIAuth.defaultAuthUI()
-        authUI.delegate = self
         return true
     }
 

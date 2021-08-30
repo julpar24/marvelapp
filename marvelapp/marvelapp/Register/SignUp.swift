@@ -13,7 +13,7 @@ class SignUp {
     let password = "testtest"
     
     func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        /*Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             guard let error = error as? Error else {
                 print("User signs up successfully")
                 let newUserInfo = Auth.auth().currentUser
@@ -32,6 +32,6 @@ class SignUp {
             default:
                 print("Error: \(error.localizedDescription)")
             }
-        }
+        }*/
     }
 }

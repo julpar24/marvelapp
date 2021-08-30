@@ -8,7 +8,6 @@ target 'marvelapp' do
     pod 'Firebase/Analytics'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
-    pod 'Firebase/Database'
-    pod 'Firebase/Storage'
-    pod 'FirebaseUI'
+    pod 'FirebaseUI/Auth'
+    pod ‘FirebaseUI/Email’
 end

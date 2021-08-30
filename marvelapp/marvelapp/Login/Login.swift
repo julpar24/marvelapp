@@ -7,11 +7,9 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
 
 class Login {
-    func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
+    /*func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 callback?(error)
@@ -47,5 +45,5 @@ class Login {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             callback?(error)
         }
-    }
+    }*/
 }

@@ -130,6 +130,7 @@
 				9D6D822126DBFC1800509AE3 /* Frameworks */,
 				9D6D822226DBFC1800509AE3 /* Resources */,
 				17C39BB2251EB6768635F318 /* [CP] Embed Pods Frameworks */,
+				6113604E909BAFDF9FBD6989 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +203,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marvelapp/Pods-marvelapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6113604E909BAFDF9FBD6989 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvelapp/Pods-marvelapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvelapp/Pods-marvelapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marvelapp/Pods-marvelapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		783272E6C198C8BEE9777846 /* [CP] Check Pods Manifest.lock */ = {

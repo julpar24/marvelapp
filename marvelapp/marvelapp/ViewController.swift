@@ -21,13 +21,18 @@ class ViewController: UIViewController {
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             guard let user = user else {
                 self?.showLoginVC()
+                self?.goToAppHome()
                 return
             }
-            self?.showUserInfo(user: user)
+            self?.goToAppHome(user: user)
         }
     }
     
-    func showUserInfo(user: User) { }
+    func goToAppHome(user: User? = nil) {
+        let homeVC = HomeViewController()
+        homeVC.modalPresentationStyle = .overCurrentContext
+        present(homeVC, animated: true, completion: nil)
+    }
     
     func showLoginVC() {
         let authUI = FUIAuth.defaultAuthUI()

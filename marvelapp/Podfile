@@ -11,4 +11,27 @@ target 'marvelapp' do
     pod 'FirebaseUI/Auth'
     pod 'FirebaseUI/Email'
     pod 'SDWebImage', '~> 5.0'
+    plugin 'cocoapods-keys', {
+    :project => "marvelapp",
+    :keys => [
+      "MarvelApiKey",
+      "MarvelPrivateKey"
+    ]}
+
+   pod 'SwiftGen'
+   pod 'RxSwift', '~> 3.0.0-beta.2'
+   pod 'Moya/RxSwift','~> 8.0.0-beta.1'
+   pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
+   pod 'CryptoSwift'
+   pod 'Dollar'
+   pod 'Kingfisher'
+   pod "Reusable"
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+      end
+    end
+  end
 end

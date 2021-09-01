@@ -10,4 +10,5 @@ target 'marvelapp' do
     pod 'Firebase/Auth'
     pod 'FirebaseUI/Auth'
     pod 'FirebaseUI/Email'
+    pod 'SDWebImage', '~> 5.0'
 end

@@ -15,6 +15,8 @@
 		9D1D102326E3CE8C008DF2CA /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D102126E3CE8C008DF2CA /* EventDetailViewController.swift */; };
 		9D1D102426E3CE8C008DF2CA /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D102226E3CE8C008DF2CA /* EventDetailViewController.xib */; };
 		9D1D102826E3D6AB008DF2CA /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D102726E3D6AB008DF2CA /* EventDetailViewModel.swift */; };
+		9D1D102F26E3F27D008DF2CA /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D102D26E3F27D008DF2CA /* LogOutViewController.swift */; };
+		9D1D103026E3F27D008DF2CA /* LogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D102E26E3F27D008DF2CA /* LogOutViewController.xib */; };
 		9D307F7926DE78EE006C1EC5 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D307F7726DE78EE006C1EC5 /* CharacterCell.swift */; };
 		9D307F7A26DE78EE006C1EC5 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D307F7826DE78EE006C1EC5 /* CharacterCell.xib */; };
 		9D307F7D26DE8B05006C1EC5 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D307F7C26DE8B05006C1EC5 /* CharactersViewModel.swift */; };
@@ -32,13 +34,12 @@
 		9D4E9CD826E109D700E97AA1 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E9CD726E109D700E97AA1 /* Extension+UIImageView.swift */; };
 		9D6D822826DBFC1800509AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D822726DBFC1800509AE3 /* AppDelegate.swift */; };
 		9D6D822A26DBFC1800509AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D822926DBFC1800509AE3 /* SceneDelegate.swift */; };
-		9D6D822C26DBFC1800509AE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D822B26DBFC1800509AE3 /* ViewController.swift */; };
+		9D6D822C26DBFC1800509AE3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D822B26DBFC1800509AE3 /* LoginViewController.swift */; };
 		9D6D822F26DBFC1800509AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D822D26DBFC1800509AE3 /* Main.storyboard */; };
 		9D6D823126DBFC1900509AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823026DBFC1900509AE3 /* Assets.xcassets */; };
 		9D6D823426DBFC1900509AE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823226DBFC1900509AE3 /* LaunchScreen.storyboard */; };
 		9D6D823E26DBFDB600509AE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823D26DBFDB600509AE3 /* GoogleService-Info.plist */; };
 		9D6D829426DC1F0D00509AE3 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D829326DC1F0D00509AE3 /* SignUp.swift */; };
-		9D6D829A26DC201000509AE3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D829926DC201000509AE3 /* Login.swift */; };
 		9D6D839A26DD8BD700509AE3 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D839826DD8BD700509AE3 /* CharactersViewController.swift */; };
 		9D6D839B26DD8BD700509AE3 /* CharactersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D839926DD8BD700509AE3 /* CharactersViewController.xib */; };
 		9D6D83A026DD8BF300509AE3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D839E26DD8BF300509AE3 /* EventsViewController.swift */; };
@@ -63,6 +64,8 @@
 		9D1D102126E3CE8C008DF2CA /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		9D1D102226E3CE8C008DF2CA /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		9D1D102726E3D6AB008DF2CA /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		9D1D102D26E3F27D008DF2CA /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		9D1D102E26E3F27D008DF2CA /* LogOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewController.xib; sourceTree = "<group>"; };
 		9D307F7726DE78EE006C1EC5 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		9D307F7826DE78EE006C1EC5 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		9D307F7C26DE8B05006C1EC5 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
@@ -81,14 +84,13 @@
 		9D6D822426DBFC1800509AE3 /* marvelapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6D822726DBFC1800509AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6D822926DBFC1800509AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D6D822B26DBFC1800509AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D6D822B26DBFC1800509AE3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D6D822E26DBFC1800509AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D6D823026DBFC1900509AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6D823326DBFC1900509AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6D823526DBFC1900509AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6D823D26DBFDB600509AE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6D829326DC1F0D00509AE3 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		9D6D829926DC201000509AE3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9D6D829C26DC291F00509AE3 /* marvelapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = marvelapp.entitlements; sourceTree = "<group>"; };
 		9D6D839826DD8BD700509AE3 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		9D6D839926DD8BD700509AE3 /* CharactersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersViewController.xib; sourceTree = "<group>"; };
@@ -166,6 +168,15 @@
 			path = EventDetail;
 			sourceTree = "<group>";
 		};
+		9D1D102C26E3F232008DF2CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9D1D102D26E3F27D008DF2CA /* LogOutViewController.swift */,
+				9D1D102E26E3F27D008DF2CA /* LogOutViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		9D307F7626DE78CE006C1EC5 /* CharacterCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +230,7 @@
 		9D6D822626DBFC1800509AE3 /* marvelapp */ = {
 			isa = PBXGroup;
 			children = (
+				9D1D102C26E3F232008DF2CA /* Login */,
 				9D1D101F26E3CE06008DF2CA /* EventDetail */,
 				9D1D0FA626E27A3F008DF2CA /* Common */,
 				9D4E9CC626E0278800E97AA1 /* Utils */,
@@ -228,11 +240,10 @@
 				9D6D839726DD8BBB00509AE3 /* Characters */,
 				9DBD6BB426E1869C00508AC9 /* CharacterDetail */,
 				9D6D839026DD307C00509AE3 /* HomeScreen */,
-				9D6D829826DC1FF800509AE3 /* Login */,
 				9D6D829226DC1EF700509AE3 /* Register */,
 				9D1D0FA526E27A24008DF2CA /* Models */,
 				9D307F8226DE8D92006C1EC5 /* CellConfiguration.swift */,
-				9D6D822B26DBFC1800509AE3 /* ViewController.swift */,
+				9D6D822B26DBFC1800509AE3 /* LoginViewController.swift */,
 				9D1D0FAB26E27E59008DF2CA /* EventCharacterConfigurations.swift */,
 				9D307FB726DEB88F006C1EC5 /* DataManager.swift */,
 				9D6D823026DBFC1900509AE3 /* Assets.xcassets */,
@@ -250,14 +261,6 @@
 				9D6D829326DC1F0D00509AE3 /* SignUp.swift */,
 			);
 			path = Register;
-			sourceTree = "<group>";
-		};
-		9D6D829826DC1FF800509AE3 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9D6D829926DC201000509AE3 /* Login.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		9D6D839026DD307C00509AE3 /* HomeScreen */ = {
@@ -367,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1D103026E3F27D008DF2CA /* LogOutViewController.xib in Resources */,
 				9D1D102426E3CE8C008DF2CA /* EventDetailViewController.xib in Resources */,
 				9D307F7A26DE78EE006C1EC5 /* CharacterCell.xib in Resources */,
 				9D6D839B26DD8BD700509AE3 /* CharactersViewController.xib in Resources */,
@@ -442,8 +446,9 @@
 				9DBD6BBB26E186DC00508AC9 /* CharacterDetailViewModel.swift in Sources */,
 				9D307F8326DE8D92006C1EC5 /* CellConfiguration.swift in Sources */,
 				9DBD6BC026E1972300508AC9 /* ComicAppearanceCell.swift in Sources */,
-				9D6D822C26DBFC1800509AE3 /* ViewController.swift in Sources */,
+				9D6D822C26DBFC1800509AE3 /* LoginViewController.swift in Sources */,
 				9D4E9CA226DFB1AD00E97AA1 /* MarvelAPI.swift in Sources */,
+				9D1D102F26E3F27D008DF2CA /* LogOutViewController.swift in Sources */,
 				9D1D102326E3CE8C008DF2CA /* EventDetailViewController.swift in Sources */,
 				9D307F7926DE78EE006C1EC5 /* CharacterCell.swift in Sources */,
 				9D307F7D26DE8B05006C1EC5 /* CharactersViewModel.swift in Sources */,
@@ -454,7 +459,6 @@
 				9D4E9CCE26E0281800E97AA1 /* HTTPParameter.swift in Sources */,
 				9D1D0FAC26E27E59008DF2CA /* EventCharacterConfigurations.swift in Sources */,
 				9D4E9CBE26DFC79600E97AA1 /* Image.swift in Sources */,
-				9D6D829A26DC201000509AE3 /* Login.swift in Sources */,
 				9D6D822826DBFC1800509AE3 /* AppDelegate.swift in Sources */,
 				9D6D83A626DD921B00509AE3 /* HomeViewController.swift in Sources */,
 				9D6D829426DC1F0D00509AE3 /* SignUp.swift in Sources */,

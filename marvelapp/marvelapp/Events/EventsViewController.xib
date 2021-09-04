@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsViewController" customModule="marvelapp" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="eem-Sh-qLt" id="Bl7-Sf-3UU"/>
+                <outlet property="events" destination="Pcm-RD-FbF" id="RUt-VR-gUi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +19,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKh-U1-7Oi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel Challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N8-FC-nva">
+                            <rect key="frame" x="118.5" y="25.5" width="138" height="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3N8-FC-nva" firstAttribute="centerX" secondItem="hKh-U1-7Oi" secondAttribute="centerX" id="FmH-36-ol4"/>
+                        <constraint firstAttribute="height" constant="75" id="Kh8-gh-vVu"/>
+                        <constraint firstItem="3N8-FC-nva" firstAttribute="centerY" secondItem="hKh-U1-7Oi" secondAttribute="centerY" id="djF-KJ-xye"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-RD-FbF">
+                    <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eTT-YI-FYP">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eem-Sh-qLt">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hKh-U1-7Oi" secondAttribute="trailing" id="FWY-aa-khh"/>
+                <constraint firstAttribute="trailing" secondItem="Pcm-RD-FbF" secondAttribute="trailing" id="I56-xE-1sW"/>
+                <constraint firstAttribute="bottom" secondItem="Pcm-RD-FbF" secondAttribute="bottom" id="Osn-zN-u7V"/>
+                <constraint firstItem="eem-Sh-qLt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SBt-xe-QUS"/>
+                <constraint firstItem="hKh-U1-7Oi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b0N-qz-hWL"/>
+                <constraint firstItem="Pcm-RD-FbF" firstAttribute="top" secondItem="hKh-U1-7Oi" secondAttribute="bottom" id="jUT-67-efU"/>
+                <constraint firstItem="hKh-U1-7Oi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jbZ-fy-6lp"/>
+                <constraint firstItem="eem-Sh-qLt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mkN-82-Nhg"/>
+                <constraint firstItem="Pcm-RD-FbF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yha-A2-WVl"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="86"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

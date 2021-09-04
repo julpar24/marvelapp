@@ -22,11 +22,12 @@ class HomeViewController: UITabBarController {
         let eventsItem = UITabBarItem(title: "Events", image: #imageLiteral(resourceName: "icon-calendar_disabled"), selectedImage: #imageLiteral(resourceName: "icon-calendar"))
         let eventsVC = ViewControllerFactory.showEventsViewController()
         eventsVC.tabBarItem = eventsItem
-        /*let logoutVC = UIAlertController(title: "Are you sure you want to logout?", message: "You can always access your content by signing back in.", preferredStyle: .alert)
-        logoutVC.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        logoutVC.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
- */
-        viewControllers = [charactersVC, eventsVC]
+        
+        let logoutItem = UITabBarItem(title: "Log Out", image: #imageLiteral(resourceName: "icon-calendar_disabled"), selectedImage: #imageLiteral(resourceName: "icon-calendar_disabled"))
+        let logoutVC = ViewControllerFactory.logOutViewController()
+        logoutVC.tabBarItem = logoutItem
+
+        viewControllers = [charactersVC, eventsVC, logoutVC]
         selectedViewController = charactersVC
     }
 }

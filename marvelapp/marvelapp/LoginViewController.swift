@@ -1,15 +1,16 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  marvelapp
 //
 //  Created by Juliana Pardal on 29/08/2021.
 //
 
 import UIKit
+import Firebase
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController, FUIAuthDelegate {
     // MARK: - Variables and constants
     
     override func viewDidLoad() {
@@ -21,11 +22,11 @@ class ViewController: UIViewController {
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             guard let user = user else {
                 self?.showLoginVC()
-                self?.goToAppHome()
                 return
             }
             self?.goToAppHome(user: user)
         }
+        
     }
     
     func goToAppHome(user: User? = nil) {
@@ -38,9 +39,14 @@ class ViewController: UIViewController {
         let authUI = FUIAuth.defaultAuthUI()
         let providers = [FUIEmailAuth()]
         authUI?.providers = providers
+        authUI?.delegate = self
         guard let authViewController = authUI?.authViewController() else { return }
         authViewController.modalPresentationStyle = .overCurrentContext
         present(authViewController, animated: true, completion: nil)
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        goToAppHome(user: user)
     }
 }
 

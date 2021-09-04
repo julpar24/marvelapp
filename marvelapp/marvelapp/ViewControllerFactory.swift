@@ -12,6 +12,11 @@ class ViewControllerFactory {
         return T.init(nibName: type.className, bundle: nil)
     }
     
+    class func loginViewController() -> LoginViewController {
+        let returnable = controller(type: LoginViewController.self)
+        return returnable
+    }
+    
     class func showCharactersViewController() -> CharactersViewController {
         let returnable = controller(type: CharactersViewController.self)
         let model = CharactersViewModel()
@@ -25,6 +30,11 @@ class ViewControllerFactory {
         let model = EventsViewModel()
         model.delegate = returnable
         returnable.model = model
+        return returnable
+    }
+    
+    class func logOutViewController() -> LogOutViewController {
+        let returnable = controller(type: LogOutViewController.self)
         return returnable
     }
     

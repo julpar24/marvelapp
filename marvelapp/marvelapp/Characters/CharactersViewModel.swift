@@ -17,7 +17,7 @@ class CharactersViewModel: CollectionDataSource {
     var characters = [Character]()
     var events = [Event]()
     let charactersRequest = GETCharacters()
-    let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49")
+    let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49", resourceName: "", shouldAddIdToRequest: true)
     
     weak var delegate: CharactersViewModelDelegate?
     

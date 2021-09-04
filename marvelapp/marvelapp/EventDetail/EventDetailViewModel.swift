@@ -1,47 +1,51 @@
 //
-//  CharacterDetailViewModel.swift
+//  EventDetailViewModel.swift
 //  marvelapp
 //
-//  Created by Juliana Pardal on 02/09/2021.
+//  Created by Juliana Pardal on 04/09/2021.
 //
 
 import UIKit
 import SDWebImage
 
-protocol CharacterDetailViewModelDelegate: class {
+protocol EventDetailViewModelDelegate: class {
     func dataSourceWasUpdated()
 }
 
-class CharacterDetailViewModel {
+class EventDetailViewModel {
     // MARK: - Variables and constants
     let cellIdentifier = "ComicAppearanceCell"
-    var character: Character
+    var event: Event
     var comics = [Comic]()
     var request: GETComics
-    let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49", resourceName: "characters/", shouldAddIdToRequest: false)
+    let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49", resourceName: "events/", shouldAddIdToRequest: true)
     
-    weak var delegate: CharacterDetailViewModelDelegate?
+    weak var delegate: EventDetailViewModelDelegate?
     
     var numberOfItems: Int {
         return comics.count
     }
     
     var image: URL? {
-        return character.thumbnail?.url
+        return event.thumbnail?.url
     }
     
-    var characterInfo: String? {
-        return character.description
+    var eventInfo: String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: event.modified ?? "")
+        return date?.dateInNaturalLanguage()
     }
     
-    var name: String? {
-        return character.name
+    var title: String? {
+        return event.title
     }
 
-    init(delegate: CharacterDetailViewModelDelegate? = nil, character: Character) {
+    init(delegate: EventDetailViewModelDelegate? = nil, event: Event) {
         self.delegate = delegate
-        self.character = character
-        request = GETComics(id: character.id)
+        self.event = event
+        request = GETComics(id: event.id)
     }
     
     // MARK: - Functions

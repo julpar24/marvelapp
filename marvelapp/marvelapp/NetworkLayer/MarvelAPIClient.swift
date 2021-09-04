@@ -13,13 +13,16 @@ public typealias ResultCallback<Value> = (Result<Value, Error>) -> Void
 public class MarvelAPIClient {
     private let baseEndpointUrl = URL(string: "https://gateway.marvel.com:443/v1/public/")!
     private let session = URLSession(configuration: .default)
-
+    private let resourceName: String
     private let publicKey: String
     private let privateKey: String
+    private let shouldAddIdToRequest: Bool
 
-    public init(publicKey: String, privateKey: String) {
+    public init(publicKey: String, privateKey: String, resourceName: String, shouldAddIdToRequest: Bool) {
         self.publicKey = publicKey
         self.privateKey = privateKey
+        self.resourceName = resourceName
+        self.shouldAddIdToRequest = shouldAddIdToRequest
     }
 
     /// Sends a request to Marvel servers, calling the completion method when finished
@@ -53,8 +56,8 @@ public class MarvelAPIClient {
     /// Encodes a URL based on the given request
     /// Everything needed for a public request to Marvel servers is encoded directly in this URL
     private func endpoint<T: APIRequest>(for request: T) -> URL {
-        guard let baseUrl = URL(string: request.resourceName, relativeTo: baseEndpointUrl) else {
-            fatalError("Bad resourceName: \(request.resourceName)")
+        guard let baseUrl = URL(string: resourceName + request.resourceName, relativeTo: baseEndpointUrl) else {
+            fatalError("Bad resourceName: \(resourceName + request.resourceName)")
         }
 
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
@@ -69,7 +72,7 @@ public class MarvelAPIClient {
         ]
 
         // Custom query items needed for this specific request
-        let customQueryItems: [URLQueryItem]
+        var customQueryItems: [URLQueryItem]
 
         do {
             customQueryItems = try URLQueryItemEncoder.encode(request)
@@ -77,7 +80,11 @@ public class MarvelAPIClient {
             fatalError("Wrong parameters: \(error)")
         }
 
-        components.queryItems = commonQueryItems //+ customQueryItems
+        if !shouldAddIdToRequest {
+            customQueryItems.removeFirst()
+        }
+        
+        components.queryItems = commonQueryItems + customQueryItems
 
         // Construct the final URL with all the previous data
         return components.url!

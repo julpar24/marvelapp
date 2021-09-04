@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
 
@@ -30,7 +29,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     }
     
     func goToAppHome(user: User? = nil) {
-        let homeVC = HomeViewController()
+        let homeVC = ViewControllerFactory.homeViewController()
         homeVC.modalPresentationStyle = .overCurrentContext
         present(homeVC, animated: true, completion: nil)
     }

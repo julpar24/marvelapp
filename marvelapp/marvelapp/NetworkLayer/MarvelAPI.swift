@@ -29,7 +29,7 @@ struct GETCharacters: APIRequest {
     let limit: Int?
     let offset: Int?
 
-    init(name: String? = nil, nameStartsWith: String? = nil, limit: Int? = nil, offset: Int? = nil) {
+    init(name: String? = nil, nameStartsWith: String? = nil, limit: Int? = 15, offset: Int? = nil) {
         self.name = name
         self.nameStartsWith = nameStartsWith
         self.limit = limit
@@ -49,12 +49,14 @@ struct GETEvents: APIRequest {
     let nameStartsWith: String?
     let limit: Int?
     let offset: Int?
+    let orderBy: String?
 
-    init(name: String? = nil, nameStartsWith: String? = nil, limit: Int? = nil, offset: Int? = nil) {
+    init(name: String? = nil, nameStartsWith: String? = nil, limit: Int? = 25, offset: Int? = nil, orderBy: String? = "modified") {
         self.name = name
         self.nameStartsWith = nameStartsWith
         self.limit = limit
         self.offset = offset
+        self.orderBy = orderBy
     }
 }
 
@@ -65,7 +67,7 @@ struct GETComics: APIRequest {
     var id: Int
     
     var resourceName: String {
-        return "characters/\(id)/comics"
+        return "\(id)/comics"
     }
     
     // Parameters

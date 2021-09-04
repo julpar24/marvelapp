@@ -42,9 +42,9 @@ class EventsViewController: UIViewController {
     
     func presentEventDetail(for indexPath: IndexPath) {
         let event = model.event(for: indexPath)
-        //let viewController = ViewControllerFactory.characterDetail(character: character)
-        //viewController.modalPresentationStyle = .overCurrentContext
-        //present(viewController, animated: true, completion: nil)
+        let viewController = ViewControllerFactory.eventDetail(event: event)
+        viewController.modalPresentationStyle = .overCurrentContext
+        present(viewController, animated: true, completion: nil)
     }
 }
 

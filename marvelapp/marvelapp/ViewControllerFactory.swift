@@ -12,8 +12,8 @@ class ViewControllerFactory {
         return T.init(nibName: type.className, bundle: nil)
     }
     
-    class func loginViewController() -> LoginViewController {
-        let returnable = controller(type: LoginViewController.self)
+    class func homeViewController() -> HomeViewController {
+        let returnable = controller(type: HomeViewController.self)
         return returnable
     }
     

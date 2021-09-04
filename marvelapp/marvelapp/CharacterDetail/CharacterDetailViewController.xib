@@ -54,12 +54,6 @@
                         <constraint firstAttribute="height" constant="79" id="rk2-PM-6dU"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconoVolver" translatesAutoresizingMaskIntoConstraints="NO" id="nb8-Q2-BjR">
-                    <rect key="frame" x="0.0" y="79" width="375" height="250"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="C4L-TM-PaP"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOE-ua-8I4">
                     <rect key="frame" x="53" y="350" width="269" height="16.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -76,32 +70,37 @@
                     <rect key="frame" x="0.0" y="424" width="375" height="243"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nb8-Q2-BjR">
+                    <rect key="frame" x="60" y="79" width="255" height="255"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="255" id="v4g-zk-K7M"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="nOE-ua-8I4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="53" id="4FI-Yp-dpC"/>
-                <constraint firstItem="nb8-Q2-BjR" firstAttribute="top" secondItem="2X6-Hb-iUn" secondAttribute="bottom" id="5ps-B6-a4o"/>
                 <constraint firstItem="Jzi-eY-cdu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5tK-3A-RFi"/>
                 <constraint firstAttribute="trailing" secondItem="2X6-Hb-iUn" secondAttribute="trailing" id="6Sq-lY-s4J"/>
                 <constraint firstItem="vEv-dU-vh7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7x8-Ny-NGH"/>
                 <constraint firstAttribute="trailing" secondItem="Jzi-eY-cdu" secondAttribute="trailing" id="9Y9-mw-P91"/>
                 <constraint firstItem="2X6-Hb-iUn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9im-iH-ovc"/>
+                <constraint firstItem="nOE-ua-8I4" firstAttribute="top" secondItem="nb8-Q2-BjR" secondAttribute="bottom" constant="16" id="CQ6-ka-37W"/>
                 <constraint firstItem="2X6-Hb-iUn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JLN-he-ahN"/>
                 <constraint firstItem="vEv-dU-vh7" firstAttribute="top" secondItem="nOE-ua-8I4" secondAttribute="bottom" constant="20" id="LkA-5v-XTg"/>
                 <constraint firstItem="Jzi-eY-cdu" firstAttribute="top" secondItem="vEv-dU-vh7" secondAttribute="bottom" constant="14" id="QcR-Z9-nBJ"/>
                 <constraint firstAttribute="trailing" secondItem="nOE-ua-8I4" secondAttribute="trailing" constant="53" id="QiK-qK-gf8"/>
-                <constraint firstAttribute="trailing" secondItem="nb8-Q2-BjR" secondAttribute="trailing" id="Uuj-qC-RpS"/>
+                <constraint firstItem="nb8-Q2-BjR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="SO5-0H-9wD"/>
+                <constraint firstItem="nb8-Q2-BjR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z7X-zu-io8"/>
                 <constraint firstAttribute="bottom" secondItem="Jzi-eY-cdu" secondAttribute="bottom" id="lm8-sA-2hO"/>
-                <constraint firstItem="nOE-ua-8I4" firstAttribute="top" secondItem="nb8-Q2-BjR" secondAttribute="bottom" constant="21" id="mIp-oZ-Ruc"/>
-                <constraint firstItem="nb8-Q2-BjR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x4y-HL-QOf"/>
+                <constraint firstItem="nb8-Q2-BjR" firstAttribute="top" secondItem="2X6-Hb-iUn" secondAttribute="bottom" id="pGw-Tf-1LO"/>
             </constraints>
             <point key="canvasLocation" x="140" y="70.614692653673174"/>
         </view>
     </objects>
     <resources>
         <image name="iconoCerrar" width="17" height="17"/>
-        <image name="iconoVolver" width="10" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

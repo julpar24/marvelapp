@@ -8,26 +8,23 @@
 import UIKit
 import SDWebImage
 
-class CharacterCell: UITableViewCell, CellConfiguration {
+class CharacterCell: UICollectionViewCell, CellConfiguration {
     // MARK: - Outlets
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var characterDescription: UILabel!
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func configure(with object: Any?) {
+        contentView.layer.cornerRadius = 4
         guard let configuration = object as? CharacterCellConfiguration else { return }
-        guard let url = configuration.imageURL else {
+        guard let url = configuration.image?.url else {
             characterImage.image = nil
             return
         }
         characterImage.sd_setImage(with: url) { [weak self] image, _, _, _ in
             self?.characterImage.image = image
         }
-        name.text = configuration.characterName
-        characterDescription.text = configuration.characterDescription
+        name.text = configuration.elementName
+        characterDescription.text = configuration.elementInfo
     }
 }

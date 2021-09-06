@@ -8,10 +8,13 @@
 import UIKit
 
 class HomeViewController: UITabBarController {
+    
+    var previousIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
+        self.delegate = self
     }
     
     func configureTabBar() {
@@ -25,9 +28,27 @@ class HomeViewController: UITabBarController {
         
         let logoutItem = UITabBarItem(title: "Log Out", image: #imageLiteral(resourceName: "logout"), selectedImage: #imageLiteral(resourceName: "logout"))
         let logoutVC = ViewControllerFactory.logOutViewController()
+        logoutVC.delegate = self
         logoutVC.tabBarItem = logoutItem
 
         viewControllers = [charactersVC, eventsVC, logoutVC]
         selectedViewController = charactersVC
+        previousIndex = 0
     }
 }
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if selectedIndex != 2 {
+            previousIndex = selectedIndex
+        }
+    }
+}
+
+extension HomeViewController: LogOutDelegate {
+    func selectPreviousIndex() {
+        guard let previousIndex = previousIndex else { return }
+        selectedIndex = previousIndex
+    }
+}
+

@@ -8,15 +8,18 @@
 import UIKit
 
 protocol CharactersViewModelDelegate: class {
-    func dataSourceWasUpdated()
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
 class CharactersViewModel: CollectionDataSource {
     // MARK: - Variables and constants
     let cellIdentifier = "CharacterCell"
     var characters = [Character]()
-    var events = [Event]()
-    let charactersRequest = GETCharacters()
+    var totalPages = 1
+    var currentPage = 0
+    let limit = 15
+    var isLoading = false
+    var hasNextPage = true
     let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49", resourceName: "", shouldAddIdToRequest: true)
     
     weak var delegate: CharactersViewModelDelegate?
@@ -42,18 +45,31 @@ class CharactersViewModel: CollectionDataSource {
         return CGSize(width: ScreenSize.width - 16, height: 120)
     }
     
-    func getElementsInfo() {
-        apiDataManager.send(charactersRequest) { [weak self] result in
-            guard let self = self else {
-                return
-            }
+    func getElementsInfo(resetList: Bool) {
+        guard !isLoading else { return }
+        if resetList {
+            hasNextPage = true
+            currentPage = 0
+        }
+        guard hasNextPage else { return }
+        isLoading = true
+        apiDataManager.send(GETCharacters(offset: currentPage * limit)) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let elements):
-                self.characters = elements.results
-                self.delegate?.dataSourceWasUpdated()
+                self.isLoading = false
+                self.totalPages = elements.total % self.limit == 0 ? elements.total / self.limit : elements.total / self.limit + 1
+                self.hasNextPage = self.currentPage < self.totalPages
+                if self.hasNextPage {
+                    self.currentPage += 1
+                }
+                if resetList {
+                    self.characters = []
+                }
+                self.characters.append(contentsOf: elements.results)
+                self.delegate?.onFetchCompleted(with: [])
             case .failure(_):
                 //TODO: handle error
-                //print(error.description)
                 break
             }
         }

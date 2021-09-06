@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsViewController" customModule="marvelapp" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicator" destination="eem-Sh-qLt" id="Bl7-Sf-3UU"/>
                 <outlet property="events" destination="Pcm-RD-FbF" id="RUt-VR-gUi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,7 +38,7 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-RD-FbF">
                     <rect key="frame" x="0.0" y="75" width="375" height="592"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eTT-YI-FYP">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,9 +46,6 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eem-Sh-qLt">
-                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,11 +53,9 @@
                 <constraint firstAttribute="trailing" secondItem="hKh-U1-7Oi" secondAttribute="trailing" id="FWY-aa-khh"/>
                 <constraint firstAttribute="trailing" secondItem="Pcm-RD-FbF" secondAttribute="trailing" id="I56-xE-1sW"/>
                 <constraint firstAttribute="bottom" secondItem="Pcm-RD-FbF" secondAttribute="bottom" id="Osn-zN-u7V"/>
-                <constraint firstItem="eem-Sh-qLt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SBt-xe-QUS"/>
                 <constraint firstItem="hKh-U1-7Oi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b0N-qz-hWL"/>
                 <constraint firstItem="Pcm-RD-FbF" firstAttribute="top" secondItem="hKh-U1-7Oi" secondAttribute="bottom" id="jUT-67-efU"/>
                 <constraint firstItem="hKh-U1-7Oi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jbZ-fy-6lp"/>
-                <constraint firstItem="eem-Sh-qLt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mkN-82-Nhg"/>
                 <constraint firstItem="Pcm-RD-FbF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yha-A2-WVl"/>
             </constraints>
             <point key="canvasLocation" x="141" y="86"/>

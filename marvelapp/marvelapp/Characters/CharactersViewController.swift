@@ -6,35 +6,39 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class CharactersViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var characters: UICollectionView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
     var model: CharactersViewModel!
+    var firstLoad = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-        configureActivityIndicator()
+        configureCollectionView()
+        //configureActivityIndicator()
     }
     
     // MARK: - Functions
-    private func configureTableView() {
+    private func configureCollectionView() {
         characters.dataSource = self
         characters.delegate = self
-        characters.isHidden = true
         registerCells()
-        model.getElementsInfo()
+        addInfiniteScroll()
+        getCharacters(resetList: true)
+        characters.es.addPullToRefresh { [weak self] in
+            self?.getCharacters(resetList: true)
+        }
     }
     
-    private func configureActivityIndicator() {
-        activityIndicator.style = .large
-        activityIndicator.color = .black
-        activityIndicator.startAnimating()
+    private func addInfiniteScroll() {
+        characters.es.addInfiniteScrolling { [weak self] in
+            self?.getCharacters()
+        }
     }
     
     private func registerCells() {
@@ -48,6 +52,10 @@ class CharactersViewController: UIViewController {
         viewController.modalPresentationStyle = .overCurrentContext
         present(viewController, animated: true, completion: nil)
     }
+    
+    private func getCharacters(resetList: Bool = false) {
+        model.getElementsInfo(resetList: resetList)
+    }
 }
 
 extension CharactersViewController: UICollectionViewDataSource {
@@ -59,20 +67,20 @@ extension CharactersViewController: UICollectionViewDataSource {
         guard let item = model.objectForRow(atIndexPath: indexPath) as? CharacterCellConfiguration else { return UICollectionViewCell() }
         let cell = characters.dequeueReusableCell(withReuseIdentifier: model.identifierForCell(atIndexPath: indexPath), for: indexPath)
         (cell as? CellConfiguration)?.configure(with: item)
-        return cell
+        return cell        
     }
 }
 
 extension CharactersViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return model.itemSize(forIndexPath: indexPath)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return model.minimumLineSpacing(forSectionAt: section)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return model.minimumInteritemSpacing(forSectionAt: section)
     }
@@ -83,19 +91,23 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CharactersViewController: UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presentCharacterDetail(for: indexPath)
     }
 }
 
 extension CharactersViewController: CharactersViewModelDelegate {
-    func dataSourceWasUpdated() {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        if firstLoad {
+            firstLoad = false
+        }
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
-            self?.characters.isHidden = false
-            self?.characters.reloadData()
+            self?.characters.es.stopPullToRefresh()
+            self?.characters.es.stopLoadingMore()
+            self?.characters.performBatchUpdates({ [weak self] in
+                self?.characters.reloadSections([0])
+            }, completion: nil)
         }
     }
 }

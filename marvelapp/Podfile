@@ -11,4 +11,5 @@ target 'marvelapp' do
     pod 'FirebaseUI/Auth'
     pod 'FirebaseUI/Email'
     pod 'SDWebImage', '~> 5.0'
+    pod "ESPullToRefresh"
 end

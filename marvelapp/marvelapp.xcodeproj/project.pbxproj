@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		34BBB50DEF02CD23AC1C7B98 /* Pods_marvelapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6E8691BDA4F40DF5225FF2 /* Pods_marvelapp.framework */; };
-		9D1D0FAC26E27E59008DF2CA /* EventCharacterConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D0FAB26E27E59008DF2CA /* EventCharacterConfigurations.swift */; };
 		9D1D0FF926E29F9D008DF2CA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D0FF826E29F9D008DF2CA /* Date+Extension.swift */; };
 		9D1D0FFD26E2A606008DF2CA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D0FFC26E2A605008DF2CA /* Event.swift */; };
 		9D1D100026E2AB22008DF2CA /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D0FFF26E2AB22008DF2CA /* EventsViewModel.swift */; };
@@ -38,7 +37,6 @@
 		9D6D823126DBFC1900509AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823026DBFC1900509AE3 /* Assets.xcassets */; };
 		9D6D823426DBFC1900509AE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823226DBFC1900509AE3 /* LaunchScreen.storyboard */; };
 		9D6D823E26DBFDB600509AE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D823D26DBFDB600509AE3 /* GoogleService-Info.plist */; };
-		9D6D829426DC1F0D00509AE3 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D829326DC1F0D00509AE3 /* SignUp.swift */; };
 		9D6D839A26DD8BD700509AE3 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D839826DD8BD700509AE3 /* CharactersViewController.swift */; };
 		9D6D839B26DD8BD700509AE3 /* CharactersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D839926DD8BD700509AE3 /* CharactersViewController.xib */; };
 		9D6D83A026DD8BF300509AE3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D839E26DD8BF300509AE3 /* EventsViewController.swift */; };
@@ -57,7 +55,6 @@
 		0AF26CE8789686B9FA5EC79C /* Pods-marvelapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapp.release.xcconfig"; path = "Target Support Files/Pods-marvelapp/Pods-marvelapp.release.xcconfig"; sourceTree = "<group>"; };
 		1E24FA4F6E14C8A639F3ED62 /* Pods-marvelapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelapp.debug.xcconfig"; path = "Target Support Files/Pods-marvelapp/Pods-marvelapp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A6E8691BDA4F40DF5225FF2 /* Pods_marvelapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1D0FAB26E27E59008DF2CA /* EventCharacterConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCharacterConfigurations.swift; sourceTree = "<group>"; };
 		9D1D0FF826E29F9D008DF2CA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		9D1D0FFC26E2A605008DF2CA /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9D1D0FFF26E2AB22008DF2CA /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
@@ -89,7 +86,6 @@
 		9D6D823326DBFC1900509AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6D823526DBFC1900509AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6D823D26DBFDB600509AE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9D6D829326DC1F0D00509AE3 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		9D6D829C26DC291F00509AE3 /* marvelapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = marvelapp.entitlements; sourceTree = "<group>"; };
 		9D6D839826DD8BD700509AE3 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		9D6D839926DD8BD700509AE3 /* CharactersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersViewController.xib; sourceTree = "<group>"; };
@@ -158,13 +154,13 @@
 			path = EventDetail;
 			sourceTree = "<group>";
 		};
-		9D1D102C26E3F232008DF2CA /* Login */ = {
+		9D1D102C26E3F232008DF2CA /* LogOut */ = {
 			isa = PBXGroup;
 			children = (
 				9D1D102D26E3F27D008DF2CA /* LogOutViewController.swift */,
 				9D1D102E26E3F27D008DF2CA /* LogOutViewController.xib */,
 			);
-			path = Login;
+			path = LogOut;
 			sourceTree = "<group>";
 		};
 		9D307F7626DE78CE006C1EC5 /* CharacterCell */ = {
@@ -220,36 +216,26 @@
 		9D6D822626DBFC1800509AE3 /* marvelapp */ = {
 			isa = PBXGroup;
 			children = (
-				9D1D102C26E3F232008DF2CA /* Login */,
+				9DD4450F26E65FFF00CF5B0F /* ViewControllerFactory */,
+				9D1D102C26E3F232008DF2CA /* LogOut */,
 				9D1D101F26E3CE06008DF2CA /* EventDetail */,
 				9D1D0FA626E27A3F008DF2CA /* Common */,
 				9D4E9CC626E0278800E97AA1 /* Utils */,
+				9DD4451126E6612200CF5B0F /* CellConfiguration */,
 				9DBD6BBD26E1963000508AC9 /* ComicAppearanceCell */,
 				9D4E9CA026DFB19B00E97AA1 /* NetworkLayer */,
 				9D6D839D26DD8BE500509AE3 /* Events */,
 				9D6D839726DD8BBB00509AE3 /* Characters */,
 				9DBD6BB426E1869C00508AC9 /* CharacterDetail */,
 				9D6D839026DD307C00509AE3 /* HomeScreen */,
-				9D6D829226DC1EF700509AE3 /* Register */,
 				9D1D0FA526E27A24008DF2CA /* Models */,
-				9D307F8226DE8D92006C1EC5 /* CellConfiguration.swift */,
-				9D6D822B26DBFC1800509AE3 /* LoginViewController.swift */,
-				9D1D0FAB26E27E59008DF2CA /* EventCharacterConfigurations.swift */,
+				9DD4450E26E65FCA00CF5B0F /* Login */,
 				9D6D823026DBFC1900509AE3 /* Assets.xcassets */,
 				9D6D823526DBFC1900509AE3 /* Info.plist */,
 				9D6D823D26DBFDB600509AE3 /* GoogleService-Info.plist */,
 				9D6D829C26DC291F00509AE3 /* marvelapp.entitlements */,
-				9D4E9CD326E0F71E00E97AA1 /* ViewControllerFactory.swift */,
 			);
 			path = marvelapp;
-			sourceTree = "<group>";
-		};
-		9D6D829226DC1EF700509AE3 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				9D6D829326DC1F0D00509AE3 /* SignUp.swift */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		9D6D839026DD307C00509AE3 /* HomeScreen */ = {
@@ -298,6 +284,30 @@
 				9DBD6BBF26E1972300508AC9 /* ComicAppearanceCell.xib */,
 			);
 			path = ComicAppearanceCell;
+			sourceTree = "<group>";
+		};
+		9DD4450E26E65FCA00CF5B0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9D6D822B26DBFC1800509AE3 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9DD4450F26E65FFF00CF5B0F /* ViewControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9D4E9CD326E0F71E00E97AA1 /* ViewControllerFactory.swift */,
+			);
+			path = ViewControllerFactory;
+			sourceTree = "<group>";
+		};
+		9DD4451126E6612200CF5B0F /* CellConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				9D307F8226DE8D92006C1EC5 /* CellConfiguration.swift */,
+			);
+			path = CellConfiguration;
 			sourceTree = "<group>";
 		};
 		D1976B992765520E81EB7DA2 /* Frameworks */ = {
@@ -454,11 +464,9 @@
 				9D1D0FF926E29F9D008DF2CA /* Date+Extension.swift in Sources */,
 				9DBD6BC526E19DE000508AC9 /* Comic.swift in Sources */,
 				9D4E9CCE26E0281800E97AA1 /* HTTPParameter.swift in Sources */,
-				9D1D0FAC26E27E59008DF2CA /* EventCharacterConfigurations.swift in Sources */,
 				9D4E9CBE26DFC79600E97AA1 /* Image.swift in Sources */,
 				9D6D822826DBFC1800509AE3 /* AppDelegate.swift in Sources */,
 				9D6D83A626DD921B00509AE3 /* HomeViewController.swift in Sources */,
-				9D6D829426DC1F0D00509AE3 /* SignUp.swift in Sources */,
 				9D4E9CCB26E027EF00E97AA1 /* URLQueryItemEncoder.swift in Sources */,
 				9D6D822A26DBFC1800509AE3 /* SceneDelegate.swift in Sources */,
 				9D4E9CD426E0F71E00E97AA1 /* ViewControllerFactory.swift in Sources */,

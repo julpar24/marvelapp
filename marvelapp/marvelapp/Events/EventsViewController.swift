@@ -6,33 +6,42 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class EventsViewController: UIViewController {
+    // MARK: - IBOutlets
     @IBOutlet weak var events: UICollectionView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Variables
     var model: EventsViewModel!
+    var firstLoad = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-        configureActivityIndicator()
+        configureCollectionView()
     }
     
     // MARK: - Functions
-    private func configureTableView() {
+    private func configureCollectionView() {
         events.dataSource = self
         events.delegate = self
-        events.isHidden = true
         registerCells()
-        model.getElementsInfo()
+        addInfiniteScroll()
+        getEvents(resetList: true)
+        events.es.addPullToRefresh { [weak self] in
+            self?.getEvents(resetList: true)
+        }
     }
     
-    private func configureActivityIndicator() {
-        activityIndicator.style = .large
-        activityIndicator.color = .black
-        activityIndicator.startAnimating()
+    private func addInfiniteScroll() {
+        events.es.addInfiniteScrolling { [weak self] in
+            self?.getEvents()
+        }
+    }
+    
+    private func getEvents(resetList: Bool = false) {
+        model.getElementsInfo(resetList: resetList)
     }
     
     private func registerCells() {
@@ -88,12 +97,16 @@ extension EventsViewController: UICollectionViewDelegate {
 }
 
 extension EventsViewController: EventsViewModelDelegate {
-    func dataSourceWasUpdated() {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        if firstLoad {
+            firstLoad = false
+        }
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
-            self?.events.isHidden = false
-            self?.events.reloadData()
+            self?.events.es.stopPullToRefresh()
+            self?.events.es.stopLoadingMore()
+            self?.events.performBatchUpdates({ [weak self] in
+                self?.events.reloadSections([0])
+            }, completion: nil)
         }
     }
 }

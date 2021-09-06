@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 protocol CharacterDetailViewModelDelegate: class {
-    func dataSourceWasUpdated()
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
 class CharacterDetailViewModel {
@@ -17,7 +17,11 @@ class CharacterDetailViewModel {
     let cellIdentifier = "ComicAppearanceCell"
     var character: Character
     var comics = [Comic]()
-    var request: GETComics
+    var totalPages = 1
+    var currentPage = 0
+    let limit = 15
+    var isLoading = false
+    var hasNextPage = true
     let apiDataManager = MarvelAPIClient(publicKey: "810a2f2d49fa97e196e57c8970b5e80b", privateKey: "f4de99d64c6bccf9d326bbb8101775315fa39f49", resourceName: "characters/", shouldAddIdToRequest: false)
     
     weak var delegate: CharacterDetailViewModelDelegate?
@@ -41,7 +45,6 @@ class CharacterDetailViewModel {
     init(delegate: CharacterDetailViewModelDelegate? = nil, character: Character) {
         self.delegate = delegate
         self.character = character
-        request = GETComics(id: character.id)
     }
     
     // MARK: - Functions
@@ -62,17 +65,23 @@ class CharacterDetailViewModel {
     }
     
     func getComicsInfo() {
-        apiDataManager.send(request) { [weak self] result in
-            guard let self = self else {
-                return
-            }
+        guard !isLoading else { return }
+        guard hasNextPage else { return }
+        isLoading = true
+        apiDataManager.send(GETComics(offset: currentPage * limit, id: character.id)) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let comics):
-                self.comics = comics.results
-                self.delegate?.dataSourceWasUpdated()
+                self.isLoading = false
+                self.totalPages = comics.total % self.limit == 0 ? comics.total / self.limit : comics.total / self.limit + 1
+                self.hasNextPage = self.currentPage < self.totalPages
+                if self.hasNextPage {
+                    self.currentPage += 1
+                }
+                self.comics.append(contentsOf: comics.results)
+                self.delegate?.onFetchCompleted(with: [])
             case .failure(_):
                 //TODO: handle error
-                //print(error.description)
                 break
             }
         }

@@ -76,7 +76,7 @@ struct GETComics: APIRequest {
     let limit: Int?
     let offset: Int?
 
-    init(title: String? = nil, titleStartsWith: String? = nil, limit: Int? = nil, offset: Int? = nil, id: Int) {
+    init(title: String? = nil, titleStartsWith: String? = nil, limit: Int? = 15, offset: Int? = nil, id: Int) {
         self.title = title
         self.titleStartsWith = titleStartsWith
         self.limit = limit

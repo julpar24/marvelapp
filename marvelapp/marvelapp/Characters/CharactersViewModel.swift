@@ -11,7 +11,7 @@ protocol CharactersViewModelDelegate: class {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
-class CharactersViewModel: CollectionDataSource {
+class CharactersViewModel {
     // MARK: - Variables and constants
     let cellIdentifier = "CharacterCell"
     var characters = [Character]()

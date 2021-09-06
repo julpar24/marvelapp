@@ -8,10 +8,21 @@
 import UIKit
 import FirebaseAuth
 
+protocol LogOutDelegate: class {
+    func selectPreviousIndex()
+}
+
 class LogOutViewController: UIViewController {
     
+    weak var delegate: LogOutDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        createAlert()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         createAlert()
     }
     
@@ -20,7 +31,9 @@ class LogOutViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] _ in
             self?.signOut()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
+            self?.delegate?.selectPreviousIndex()
+        } ))
         present(alert, animated: true, completion: nil)
     }
     
@@ -42,23 +55,4 @@ class LogOutViewController: UIViewController {
             print("Error signing out: %@", signOutError)
         }
     }
-    
-    /* func sendEmailVerification(_ callback: ((Error?) -> ())? = nil) {
-     Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
-     callback?(error)
-     })
-     }
-     
-     
-     func reloadUser(_ callback: ((Error?) -> ())? = nil){
-     Auth.auth().currentUser?.reload(completion: { (error) in
-     callback?(error)
-     })
-     }
-     
-     func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil) {
-     Auth.auth().sendPasswordReset(withEmail: email) { error in
-     callback?(error)
-     }
-     }*/
 }

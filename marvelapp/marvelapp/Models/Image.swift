@@ -26,12 +26,3 @@ struct Image: Decodable {
         self.url = url
     }
 }
-
-public enum MarvelError: Error {
-    case encoding
-    case decoding
-    case server(message: String)
-    case invalidURL
-    case parseFailure
-    case emptyData
-}

@@ -23,7 +23,7 @@ class HomeViewController: UITabBarController {
         let eventsVC = ViewControllerFactory.showEventsViewController()
         eventsVC.tabBarItem = eventsItem
         
-        let logoutItem = UITabBarItem(title: "Log Out", image: #imageLiteral(resourceName: "icon-calendar_disabled"), selectedImage: #imageLiteral(resourceName: "icon-calendar_disabled"))
+        let logoutItem = UITabBarItem(title: "Log Out", image: #imageLiteral(resourceName: "logout"), selectedImage: #imageLiteral(resourceName: "logout"))
         let logoutVC = ViewControllerFactory.logOutViewController()
         logoutVC.tabBarItem = logoutItem
 

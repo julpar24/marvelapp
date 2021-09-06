@@ -71,7 +71,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nb8-Q2-BjR">
-                    <rect key="frame" x="60" y="79" width="255" height="255"/>
+                    <rect key="frame" x="53" y="79" width="269" height="255"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="255" id="v4g-zk-K7M"/>
                     </constraints>
@@ -82,6 +82,7 @@
             <constraints>
                 <constraint firstItem="nOE-ua-8I4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="53" id="4FI-Yp-dpC"/>
                 <constraint firstItem="Jzi-eY-cdu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5tK-3A-RFi"/>
+                <constraint firstItem="nb8-Q2-BjR" firstAttribute="leading" secondItem="nOE-ua-8I4" secondAttribute="leading" id="6Ge-Rc-eOW"/>
                 <constraint firstAttribute="trailing" secondItem="2X6-Hb-iUn" secondAttribute="trailing" id="6Sq-lY-s4J"/>
                 <constraint firstItem="vEv-dU-vh7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7x8-Ny-NGH"/>
                 <constraint firstAttribute="trailing" secondItem="Jzi-eY-cdu" secondAttribute="trailing" id="9Y9-mw-P91"/>
@@ -91,7 +92,6 @@
                 <constraint firstItem="vEv-dU-vh7" firstAttribute="top" secondItem="nOE-ua-8I4" secondAttribute="bottom" constant="20" id="LkA-5v-XTg"/>
                 <constraint firstItem="Jzi-eY-cdu" firstAttribute="top" secondItem="vEv-dU-vh7" secondAttribute="bottom" constant="14" id="QcR-Z9-nBJ"/>
                 <constraint firstAttribute="trailing" secondItem="nOE-ua-8I4" secondAttribute="trailing" constant="53" id="QiK-qK-gf8"/>
-                <constraint firstItem="nb8-Q2-BjR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="SO5-0H-9wD"/>
                 <constraint firstItem="nb8-Q2-BjR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z7X-zu-io8"/>
                 <constraint firstAttribute="bottom" secondItem="Jzi-eY-cdu" secondAttribute="bottom" id="lm8-sA-2hO"/>
                 <constraint firstItem="nb8-Q2-BjR" firstAttribute="top" secondItem="2X6-Hb-iUn" secondAttribute="bottom" id="pGw-Tf-1LO"/>

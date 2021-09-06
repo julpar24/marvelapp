@@ -20,7 +20,6 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        //configureActivityIndicator()
     }
     
     // MARK: - Functions

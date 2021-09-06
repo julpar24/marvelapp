@@ -6,19 +6,24 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class CharacterDetailViewController: UIViewController {
+    // MARK: - IBOutlets
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var characterInfo: UILabel!
     @IBOutlet weak var comicsTableView: UITableView!
     
+    // MARK: - IBActions
     @IBAction func closeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Variables
     var model: CharacterDetailViewModel!
+    var firstLoad = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -43,6 +48,17 @@ class CharacterDetailViewController: UIViewController {
     private func configureTableView() {
         comicsTableView.dataSource = self
         registerCells()
+        addInfiniteScroll()
+        getComics()
+    }
+    
+    private func addInfiniteScroll() {
+        comicsTableView.es.addInfiniteScrolling { [weak self] in
+            self?.getComics()
+        }
+    }
+    
+    private func getComics() {
         model.getComicsInfo()
     }
 
@@ -66,9 +82,17 @@ extension CharacterDetailViewController: UITableViewDataSource {
 }
 
 extension CharacterDetailViewController: CharacterDetailViewModelDelegate {
-    func dataSourceWasUpdated() {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        if firstLoad {
+            firstLoad = false
+        }
         DispatchQueue.main.async { [weak self] in
-            self?.comicsTableView.reloadData()
+            self?.comicsTableView.es.stopLoadingMore()
+            self?.comicsTableView.performBatchUpdates({ [weak self] in
+                let sectionToReload = 0
+                let indexSet: IndexSet = [sectionToReload]
+                self?.comicsTableView.reloadSections(indexSet, with: .automatic)
+            }, completion: nil)
         }
     }
 }

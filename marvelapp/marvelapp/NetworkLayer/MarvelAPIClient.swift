@@ -80,11 +80,11 @@ public class MarvelAPIClient {
             fatalError("Wrong parameters: \(error)")
         }
 
-        if !shouldAddIdToRequest {
-            customQueryItems.removeFirst()
-        }
+        let parameters = customQueryItems.filter {
+                $0.name != "id"
+            }
         
-        components.queryItems = commonQueryItems + customQueryItems
+        components.queryItems = shouldAddIdToRequest ? commonQueryItems + customQueryItems : commonQueryItems + parameters
 
         // Construct the final URL with all the previous data
         return components.url!

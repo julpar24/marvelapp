@@ -1,4 +1,5 @@
 PODS:
+  - ESPullToRefresh (2.9.3)
   - Firebase/Analytics (8.5.0):
     - Firebase/Core
   - Firebase/Auth (8.5.0):
@@ -106,6 +107,7 @@ PODS:
   - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
+  - ESPullToRefresh
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -115,6 +117,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ESPullToRefresh
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -133,6 +136,7 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   Firebase: ff8c73105b90e33e1dc6c8e5445d7adc2ccdc7c1
   FirebaseAnalytics: 96325c1e0acbd2bb805c6a613028b1fe599d6a37
   FirebaseAuth: b152ea261b60eeb9419ae7e5bf34761382b33277
@@ -150,6 +154,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: da0aac8b2e96099fa9e5d403b52c6d07f9fd3601
+PODFILE CHECKSUM: 59d3e7d46dae487cfca3c3af005c8a9a60492d67
 
 COCOAPODS: 1.10.1
